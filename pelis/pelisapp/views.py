@@ -7,5 +7,8 @@ def home(request):
 def contacto(request):
     return render(request,"pelisapp/contacto.html")
 
-def capitulos(request):
-    return render(request,"pelisapp/cap.html")
+def galeria(request):
+    return render(request,"pelisapp/galeria.html")
+
+def galeria(request):
+    return render(request,"pelisapp/pelicula.html")

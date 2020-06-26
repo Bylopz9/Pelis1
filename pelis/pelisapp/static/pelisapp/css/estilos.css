@@ -54,27 +54,6 @@ header {
     transition: all 0.5s;
 }
 
-header:hover {
-   /* background-color:silver;*/
-    /*height: 50px;*/
-    /*transform: scale(1.1);*/
-}
-
-header:active {
-   /* background-color:magenta;*/
-}
-
-/*
-h1 {
-    color:white;
-}
-*/
-/*
-header > h1 {
-    color: white;
-}
-*/
-
 /*Una clase de CSS es un conjunto de estilos reutilizables*/
 
 .texto_blanco {
@@ -83,7 +62,7 @@ header > h1 {
 
 #principal {
     width: 100%;
-    min-height: 500px;
+    min-height: 100vh;
     height: auto;
 }
 

@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CineLand</title>
     <link rel="stylesheet" href="{% static 'pelisapp/css/estilos.css' %}">
+    {% block css %}
+    
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -19,7 +22,7 @@
                             <a href="https://www.google.com">Home</a>
                         </li>
                         <li>
-                            <a href="https://facebook.com">Contacto</a>
+                            <a href="{url '/galeria'}">GALERIA</a>
                         </li>
                         <li>
                             <a href="https://www.google.com">Home</a>
@@ -102,5 +105,8 @@
     <!--realizamos la carga del script al final
     para asegurarnos que la página esta cargada-->
     <script src="{% static 'pelisapp/js/basico.js'%}"></script>
+    {% block scripts %}
+
+    {% endblock %}
 </body>
 </html>
