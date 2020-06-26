@@ -10,5 +10,5 @@ def contacto(request):
 def galeria(request):
     return render(request,"pelisapp/galeria.html")
 
-def galeria(request):
+def pelicula(request):
     return render(request,"pelisapp/pelicula.html")

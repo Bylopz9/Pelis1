@@ -19,16 +19,16 @@
         <nav>
                 <ul>
                         <li>
-                            <a href="https://www.google.com">Home</a>
+                            <a href="{%url 'home' %}">INICIO</a>
                         </li>
                         <li>
-                            <a href="{url '/galeria'}">GALERIA</a>
+                            <a href="{%url 'galeria' %}">GALERIA</a>
                         </li>
                         <li>
-                            <a href="https://www.google.com">Home</a>
+                            <a href="{%url 'contacto' %}">CONTACTO</a>
                         </li>
                         <li>
-                            <a href="https://facebook.com">Contacto</a>
+                            <a href="https://facebook.com">CERRAR SESSION</a>
                         </li>
                 </ul>   
         </nav>
@@ -105,7 +105,7 @@
     <!--realizamos la carga del script al final
     para asegurarnos que la página esta cargada-->
     <script src="{% static 'pelisapp/js/basico.js'%}"></script>
-    {% block scripts %}
+    {% block java %}
 
     {% endblock %}
 </body>
