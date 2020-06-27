@@ -27,8 +27,10 @@ def nva_peli(request):
     return render(request,"pelisapp/nva_peli.html",data)
 
 def list_peli(request):
-
+# solicita informacion de la base de datos para mostarla en los templates
+#la variable pelicula se genera para almacenar la informacion de la Base de datos
     pelicula = Peliculas.objects.all()
+# Este diccionario se genera para solicitar la indormacion de la base de datos
     dato = {
         'peliculas': pelicula
     }

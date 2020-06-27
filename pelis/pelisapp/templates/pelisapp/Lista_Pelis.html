@@ -13,10 +13,13 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Se genera un ciclo for para crear de manera automatica la tabla con informacion de la base de datos -->
 
+            <!-- Se crea la variable "p" para almacenar la informacion de la base de datos -->
             {% for p in peliculas %}
 
             <tr>
+                <!-- con el comando {{ p.id }} se manda a imprimir el campo de la base de datos que deseamos tener-->
                 <th scope="row"> {{ p.id }} </th>
                 <td>{{ p.titulo }}</td>
                 <td>{{ p.duracion }}</td>
