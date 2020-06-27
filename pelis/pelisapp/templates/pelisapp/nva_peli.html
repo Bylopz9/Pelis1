@@ -1,0 +1,25 @@
+{% extends 'pelisapp/base.html' %} {% load static %} {% block contenido %}
+
+<div class="bg-dark m-5">
+
+    <div class="bg-dark text-center text-light">
+        <h2>AGREGAR NUEVA PELICULA</h2>
+    </div>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table class="text-light justify-content-center">
+            {{ from.as_table }}
+
+        </table>
+      <div class="justify-content-between">
+       
+        <input type="submit" value="Guardar">
+       
+        <input type="reset" value="limpiar">
+       
+      </div>
+    </form>
+    {{ mensaje}}
+</div>
+{% endblock %}

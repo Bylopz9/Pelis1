@@ -20,3 +20,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pelisapp.urls')),
 ]
+
+#Modifica la el entorno del panel de control
+
+admin.site.site_header = "Planel de Control PELIS"
+admin.site.site_title = "PELIS.COM"
+admin.site.index_title = "Modulos de Administración"
+
