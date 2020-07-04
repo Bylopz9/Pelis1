@@ -15,7 +15,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import home,galeria,contacto,list_peli,nva_peli
+from .views import home,galeria,contacto,list_peli,nva_peli,update
 
 
 urlpatterns = [
@@ -24,4 +24,5 @@ urlpatterns = [
     path('galeria', galeria, name="galeria"),
     path('nva_peli', nva_peli, name="nva_peli"),
     path('list_peli', list_peli, name="list_peli"),
+    path('update', update, name="update"),
 ]

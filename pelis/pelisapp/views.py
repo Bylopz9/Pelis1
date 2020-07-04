@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from .models import Peliculas
 from .froms import peliForm
-
-# Create your views here.
+# Create your views here. 
 def home(request):
     return render(request,"pelisapp/home.html")
 
@@ -13,27 +12,29 @@ def galeria(request):
     return render(request,"pelisapp/galeria.html")
 
 def nva_peli(request):
-
-    data= {
-        'from':peliForm()
-    }
-
+    data= { 'from':peliForm() }
     if request.method == 'POST':
         formulario = peliForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Se guardaron los cambios correctamente"
-
-    return render(request,"pelisapp/nva_peli.html",data)
-
+            data['mensaje'] = "Seguardaron los cambios correctamente" 
+    return render(request,"pelisapp/nva_peli.html",data) 
+        
 def list_peli(request):
-# solicita informacion de la base de datos para mostarla en los templates
-#la variable pelicula se genera para almacenar la informacion de la Base de datos
+#solicita informacion de la base de datos para mostarla en los templates 
+# la variable pelicula se genera para almacenar la informacion de la Base de datos 
     pelicula = Peliculas.objects.all()
-# Este diccionario se genera para solicitar la indormacion de la base de datos
-    dato = {
+    # Este diccionario se genera para solicitar la indormacion de la base de datos 
+    dato = { 
         'peliculas': pelicula
-    }
-
+        }
     return render(request,"pelisapp/Lista_Pelis.html", dato)
 
+def update(request):
+        data= { 'from':peliForm() }
+        if request.method == 'POST':
+            formulario = peliForm(request.POST)
+            if formulario.is_valid():
+                formulario.save()
+                data['mensaje'] = "Seguardaron los cambios correctamente" 
+        return render(request,"pelisapp/update.html")
