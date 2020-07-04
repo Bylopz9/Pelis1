@@ -12,7 +12,9 @@ def galeria(request):
     return render(request,"pelisapp/galeria.html")
 
 def nva_peli(request):
-    data= { 'from':peliForm() }
+    data= { 
+        'from':peliForm()
+        }
     if request.method == 'POST':
         formulario = peliForm(request.POST)
         if formulario.is_valid():
@@ -30,11 +32,9 @@ def list_peli(request):
         }
     return render(request,"pelisapp/Lista_Pelis.html", dato)
 
-def update(request):
-        data= { 'from':peliForm() }
-        if request.method == 'POST':
-            formulario = peliForm(request.POST)
-            if formulario.is_valid():
-                formulario.save()
-                data['mensaje'] = "Seguardaron los cambios correctamente" 
-        return render(request,"pelisapp/update.html")
+def update(request, id):
+    pelicula = Peliculas.objects.get(id=id)
+    data= {
+        'from':peliForm(instance=pelicula)
+        }
+    return render(request,"pelisapp/update.html")

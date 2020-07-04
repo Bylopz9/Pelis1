@@ -24,5 +24,5 @@ urlpatterns = [
     path('galeria', galeria, name="galeria"),
     path('nva_peli', nva_peli, name="nva_peli"),
     path('list_peli', list_peli, name="list_peli"),
-    path('update', update, name="update"),
+    path('update/<id>/', update, name="update"),
 ]

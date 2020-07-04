@@ -15,7 +15,9 @@
                 </th>
                 <th class="th-sm" scope="col">Genero
                 </th>
-
+                </th>
+                <th class="th-sm" scope="col">Opciones
+                </th>
             </tr>
         </thead>
 
@@ -32,6 +34,9 @@
                 <td>{{ p.duracion }}</td>
                 <td>{{ p.anio }}</td>
                 <td>{{ p.genero }}</td>
+                <td class="text-center h-75">
+                <a href="{% url 'update' p.id %}"><span class="btn btn-info">Modificar</span></a>
+                </td>
             </tr>
 
             {% endfor %}
