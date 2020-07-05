@@ -1,5 +1,6 @@
 {% extends 'pelisapp/base.html' %}
 {% load static %}
+
 {% block contenido %}
 
 <div class="container">
@@ -7,13 +8,13 @@
     <div class="bg-dark m-5 p-3 col-12">
 
         <div class="bg-dark text-center text-light pt-sm-4 pb-sm-4">
-            <h2>ACTUALIZAR PELICULA</h2>
+            <h2>MODIFICA PELICULA</h2>
         </div>
 
         <form action="" method="POST">
             {% csrf_token %}
             <table class="text-light justify-content-center pt-sm-4 pb-sm-4">
-                {{ from.as_table }}
+                {{ form.as_table }}
 
             </table>
 

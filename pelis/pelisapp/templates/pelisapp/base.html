@@ -11,6 +11,9 @@
     {% block css %}
     
     {% endblock %}
+    {% block java %}
+
+    {% endblock %}
 </head>
 <body>
     <header>
@@ -34,7 +37,7 @@
                         <li>
                             <a href="{%url 'nva_peli' %}">NUEVA PELICULA</a>
                         </li>
-                </ul>   
+ 
         </nav>
         
     </header>
@@ -109,8 +112,17 @@
     <!--realizamos la carga del script al final
     para asegurarnos que la página esta cargada-->
     <script src="{% static 'pelisapp/js/basico.js'%}"></script>
-    {% block java %}
-
-    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{% static 'pelisapp/js/confimacion.js' %}"></script>
+    <script src="{% static 'pelisapp/js/bootstrap.min.js' %}"></script>
+    <script>
+    $(document).ready(function() {
+        $('#dtDynamicVerticalScrollExample').DataTable({
+            "scrollY": "50vh",
+            "scrollCollapse": true,
+        });
+        $('.dataTables_length').addClass('bs-select');
+    });
+</script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Peliculas
 from .froms import peliForm
 # Create your views here. 
@@ -13,28 +13,45 @@ def galeria(request):
 
 def nva_peli(request):
     data= { 
-        'from':peliForm()
+        'form':peliForm()
         }
     if request.method == 'POST':
         formulario = peliForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            data['mensaje'] = "Seguardaron los cambios correctamente" 
-    return render(request,"pelisapp/nva_peli.html",data) 
-        
+            data['mensaje'] = "Seguardaron los cambios correctamente"
+    return render(request,"pelisapp/nva_peli.html",data)
+
+
 def list_peli(request):
 #solicita informacion de la base de datos para mostarla en los templates 
 # la variable pelicula se genera para almacenar la informacion de la Base de datos 
     pelicula = Peliculas.objects.all()
     # Este diccionario se genera para solicitar la indormacion de la base de datos 
     dato = { 
-        'peliculas': pelicula
+        'Peliculas': pelicula
         }
     return render(request,"pelisapp/Lista_Pelis.html", dato)
 
-def update(request, id):
+def actualiza(request, id):
+
     pelicula = Peliculas.objects.get(id=id)
     data= {
-        'from':peliForm(instance=pelicula)
+        'form':peliForm(instance=pelicula)
         }
-    return render(request,"pelisapp/update.html")
+    
+    if request.method == 'POST':
+        formulario = peliForm(data=request.POST, instance=pelicula)
+
+        if formulario.is_valid():
+            formulario.save()
+            data['mensaje']= "Peliacula actualizada correctamente"
+            data['form'] = formulario
+
+    return render(request,"pelisapp/actualiza.html",data)
+
+def elimina(request,id):
+    pelicula = Peliculas.objects.get(id=id)
+    pelicula.delete()
+
+    return redirect(to="list_peli")
